@@ -1,1 +1,70 @@
 # FewX
+
+**FewX** is an open source toolbox on top of Detectron2 for data-limited instance-level recognition tasks, e.g., few-shot object detection, few-shot instance segmentation, partially supervised instance segmentation and so on. 
+
+All data-limited instance-level recognition works from **Qi Fan**  (HKUST, fanqithu@gmail.com) are open-sourced here.
+
+To date, FewX implements the following algorithms:
+
+- [FSOD](https://arxiv.org/abs/1908.01998): few-shot object detection.
+- [CPMask](https://arxiv.org/abs/2007.12387): partially supervised/fully supervised/few-shot instance segmentation (to be released).
+
+## Highlights
+- **State-of-the-art performance.**  FSOD is the best few-shot object detection model. CPMask is the best partially supervised/few-shot instance segmentation model.
+
+## Updates
+- FewX has been released. (09/08/2020)
+
+## Results on MS COCO
+
+### FSOD
+
+|Method|Training Dataset|Evaluation way&shot|box AP|download|
+|:--------:|:--------:|:--------:|:--------:|:--:|
+|FSOD (paper)|COCO (non-voc)|full-way 10-shot|11.1|-|
+|FSOD (this implementation)|COCO (non-voc)|full-way 10-shot|**12.0**|<a href="https://drive.google.com/file/d/1VO1XMKtiU4pMNPfIvw5iZRqlO9dr5BhN/view?usp=sharing">model</a>&nbsp;\|&nbsp;<a href="https://drive.google.com/file/d/18eC5Nn1HBJcDf75CoLWOwncYFXzHGXFD/view?usp=sharing">metrics</a>|
+
+The results are reported on the COCO voc subset.
+
+You can reference the [original FSOD implementation](https://github.com/fanq15/FSOD-code) on the [Few-Shot-Object-Detection-Dataset](https://github.com/fanq15/Few-Shot-Object-Detection-Dataset).
+
+
+## Installation
+You only need to install [detectron2](https://github.com/facebookresearch/detectron2). We recommend the Pre-Built Detectron2 (Linux only) version with pytorch 1.5.
+
+## Prepare dataset
+- Prepare for coco dataset following [this instruction](https://github.com/facebookresearch/detectron2/tree/master/datasets).
+
+- `cd datasets`, change the `DATA_ROOT` in the `generate_support_data.sh` to your data path.
+
+- `sh generate_support_data.sh`.
+
+## Training and Evaluation
+
+Just run `sh all.sh` in the root dir.
+
+
+## TODO
+ - [ ] Add [CPMask](https://arxiv.org/abs/2007.12387) code with partially supervised instance segmentation, fully supervised instance segmentation and few-shot instance segmentation.
+
+## Citing FewX
+If you use this toolbox in your research or wish to refer to the baseline results, please use the following BibTeX entries.
+
+  ```
+  @inproceedings{fan2020fsod,
+    title={Few-Shot Object Detection with Attention-RPN and Multi-Relation Detector},
+    author={Fan, Qi and Zhuo, Wei and Tang, Chi-Keung and Tai, Yu-Wing},
+    booktitle={CVPR},
+    year={2020}
+    
+  }
+  @inproceedings{fan2020cpmask,
+    title={Commonality-Parsing Network across Shape and Appearance for Partially Supervised Instance Segmentation},
+    author={Fan, Qi and Ke, Lei and Pei, Wenjie and Tang, Chi-Keung and Tai, Yu-Wing},
+    booktitle={ECCV},
+    year={2020}
+  }
+  ```
+
+## Special Thanks to
+[Detectron2](https://github.com/facebookresearch/detectron2), [AdelaiDet](https://github.com/aim-uofa/AdelaiDet), [centermask2](https://github.com/youngwanLEE/centermask2)
