@@ -47,6 +47,7 @@ Just run `sh all.sh` in the root dir. (This script uses `4 GPUs`. You can change
 
 
 ## TODO
+ - [ ] Add other dataset results to FSOD.
  - [ ] Add [CPMask](https://arxiv.org/abs/2007.12387) code with partially supervised instance segmentation, fully supervised instance segmentation and few-shot instance segmentation.
 
 ## Citing FewX
