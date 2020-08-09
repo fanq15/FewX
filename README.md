@@ -26,7 +26,7 @@ To date, FewX implements the following algorithms:
 |FSOD (paper)|COCO (non-voc)|full-way 10-shot|11.1|-|
 |FSOD (this implementation)|COCO (non-voc)|full-way 10-shot|**12.0**|<a href="https://drive.google.com/file/d/1VO1XMKtiU4pMNPfIvw5iZRqlO9dr5BhN/view?usp=sharing">model</a>&nbsp;\|&nbsp;<a href="https://drive.google.com/file/d/18eC5Nn1HBJcDf75CoLWOwncYFXzHGXFD/view?usp=sharing">metrics</a>|
 
-The results are reported on the COCO voc subset.
+The results are reported on the COCO voc subset with **ResNet-50** backbone.
 
 You can reference the [original FSOD implementation](https://github.com/fanq15/FSOD-code) on the [Few-Shot-Object-Detection-Dataset](https://github.com/fanq15/Few-Shot-Object-Detection-Dataset).
 
@@ -68,5 +68,5 @@ If you use this toolbox in your research or wish to refer to the baseline result
   }
   ```
 
-## Special Thanks to
+## Special Thanks
 [Detectron2](https://github.com/facebookresearch/detectron2), [AdelaiDet](https://github.com/aim-uofa/AdelaiDet), [centermask2](https://github.com/youngwanLEE/centermask2)
