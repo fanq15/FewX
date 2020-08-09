@@ -1,0 +1,7 @@
+_BASE_: "Base-FSOD-C4.yaml"
+MODEL:
+  WEIGHTS: "detectron2://ImageNetPretrained/MSRA/R-50.pkl"
+  MASK_ON: False
+  RESNETS:
+    DEPTH: 50
+OUTPUT_DIR: './output/fsod/R_50_C4_1x'

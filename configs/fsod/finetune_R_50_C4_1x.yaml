@@ -1,0 +1,28 @@
+_BASE_: "Base-FSOD-C4.yaml"
+MODEL:
+  WEIGHTS: "./output/fsod/R_50_C4_1x/model_final.pth" 
+  MASK_ON: False
+  RESNETS:
+    DEPTH: 50
+  BACKBONE:
+    FREEZE_AT: 5
+DATASETS:
+  TRAIN: ("coco_2017_train_voc_10_shot",)
+  TEST: ("coco_2017_val",)
+SOLVER:
+  IMS_PER_BATCH: 4
+  BASE_LR: 0.001
+  STEPS: (2000, 3000)
+  MAX_ITER: 3000
+  WARMUP_ITERS: 200
+INPUT:
+  FS:
+    FEW_SHOT: True
+    SUPPORT_WAY: 2
+    SUPPORT_SHOT: 9
+  MIN_SIZE_TRAIN: (440, 472, 504, 536, 568, 600)
+  MAX_SIZE_TRAIN: 1000
+  MIN_SIZE_TEST: 600
+  MAX_SIZE_TEST: 1000
+OUTPUT_DIR: './output/fsod/finetune_dir/R_50_C4_1x'
+
