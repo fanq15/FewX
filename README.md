@@ -19,7 +19,7 @@ To date, FewX implements the following algorithms:
 
 ## Results on MS COCO
 
-### FSOD
+### Few Shot Object Detection
 
 |Method|Training Dataset|Evaluation way&shot|box AP|download|
 |:--------:|:--------:|:--------:|:--------:|:--:|
