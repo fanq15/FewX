@@ -10,7 +10,9 @@ To date, FewX implements the following algorithms:
 - [CPMask](https://arxiv.org/abs/2007.12387): partially supervised/fully supervised/few-shot instance segmentation (to be released).
 
 ## Highlights
-- **State-of-the-art performance.**  FSOD is the best few-shot object detection model. CPMask is the best partially supervised/few-shot instance segmentation model.
+- **State-of-the-art performance.**  
+  - FSOD is the best few-shot object detection model. 
+  - CPMask is the best partially supervised/few-shot instance segmentation model.
 
 ## Updates
 - FewX has been released. (09/08/2020)
