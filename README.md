@@ -43,7 +43,7 @@ You only need to install [detectron2](https://github.com/facebookresearch/detect
 
 ## Training and Evaluation
 
-Just run `sh all.sh` in the root dir.
+Just run `sh all.sh` in the root dir. (This script uses `4 GPUs`. You can change the GPU number.)
 
 
 ## TODO
