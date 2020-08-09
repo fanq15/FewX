@@ -1,0 +1,67 @@
+Running per image evaluation...
+Evaluate annotation type *bbox*
+COCOeval_opt.evaluate() finished in 7.92 seconds.
+Accumulating evaluation results...
+COCOeval_opt.accumulate() finished in 0.96 seconds.
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.030
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.056
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.029
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.007
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.031
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.052
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.047
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.066
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.066
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.009
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.059
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.114
+[32m[08/08 18:10:48 fewx.evaluation.coco_evaluation]: [0mEvaluation results for bbox: 
+|  AP   |  AP50  |  AP75  |  APs  |  APm  |  APl  |
+|:-----:|:------:|:------:|:-----:|:-----:|:-----:|
+| 2.989 | 5.592  | 2.948  | 0.724 | 3.057 | 5.165 |
+[32m[08/08 18:10:48 fewx.evaluation.coco_evaluation]: [0mEvaluation results for VOC 20 categories =======> AP  : 11.95
+[32m[08/08 18:10:48 fewx.evaluation.coco_evaluation]: [0mEvaluation results for VOC 20 categories =======> AP50: 22.37
+[32m[08/08 18:10:48 fewx.evaluation.coco_evaluation]: [0mEvaluation results for VOC 20 categories =======> AP75: 11.79
+[32m[08/08 18:10:48 fewx.evaluation.coco_evaluation]: [0mEvaluation results for VOC 20 categories =======> APs : 2.89
+[32m[08/08 18:10:48 fewx.evaluation.coco_evaluation]: [0mEvaluation results for VOC 20 categories =======> APm : 12.23
+[32m[08/08 18:10:48 fewx.evaluation.coco_evaluation]: [0mEvaluation results for VOC 20 categories =======> APl : 20.66
+[32m[08/08 18:10:48 fewx.evaluation.coco_evaluation]: [0mEvaluation results for Non VOC 60 categories =======> AP  : 0.00
+[32m[08/08 18:10:48 fewx.evaluation.coco_evaluation]: [0mEvaluation results for Non VOC 60 categories =======> AP50: 0.00
+[32m[08/08 18:10:48 fewx.evaluation.coco_evaluation]: [0mEvaluation results for Non VOC 60 categories =======> AP75: 0.00
+[32m[08/08 18:10:48 fewx.evaluation.coco_evaluation]: [0mEvaluation results for Non VOC 60 categories =======> APs : 0.00
+[32m[08/08 18:10:48 fewx.evaluation.coco_evaluation]: [0mEvaluation results for Non VOC 60 categories =======> APm : 0.00
+[32m[08/08 18:10:48 fewx.evaluation.coco_evaluation]: [0mEvaluation results for Non VOC 60 categories =======> APl : 0.00
+[32m[08/08 18:10:48 fewx.evaluation.coco_evaluation]: [0mPer-category bbox AP: 
+| category      | AP     | category     | AP     | category       | AP     |
+|:--------------|:-------|:-------------|:-------|:---------------|:-------|
+| person        | 10.446 | bicycle      | 5.604  | car            | 11.692 |
+| motorcycle    | 10.597 | airplane     | 23.452 | bus            | 20.706 |
+| train         | 16.856 | truck        | 0.000  | boat           | 1.730  |
+| traffic light | 0.000  | fire hydrant | 0.000  | stop sign      | 0.000  |
+| parking meter | 0.000  | bench        | 0.000  | bird           | 8.258  |
+| cat           | 25.047 | dog          | 17.904 | horse          | 11.009 |
+| sheep         | 6.285  | cow          | 9.031  | elephant       | 0.000  |
+| bear          | 0.000  | zebra        | 0.000  | giraffe        | 0.000  |
+| backpack      | 0.000  | umbrella     | 0.000  | handbag        | 0.000  |
+| tie           | 0.000  | suitcase     | 0.000  | frisbee        | 0.000  |
+| skis          | 0.000  | snowboard    | 0.000  | sports ball    | 0.000  |
+| kite          | 0.000  | baseball bat | 0.000  | baseball glove | 0.000  |
+| skateboard    | 0.000  | surfboard    | 0.000  | tennis racket  | 0.000  |
+| bottle        | 7.444  | wine glass   | 0.000  | cup            | 0.000  |
+| fork          | 0.000  | knife        | 0.000  | spoon          | 0.000  |
+| bowl          | 0.000  | banana       | 0.000  | apple          | 0.000  |
+| sandwich      | 0.000  | orange       | 0.000  | broccoli       | 0.000  |
+| carrot        | 0.000  | hot dog      | 0.000  | pizza          | 0.000  |
+| donut         | 0.000  | cake         | 0.000  | chair          | 2.958  |
+| couch         | 11.579 | potted plant | 4.004  | bed            | 0.000  |
+| dining table  | 8.955  | toilet       | 0.000  | tv             | 25.533 |
+| laptop        | 0.000  | mouse        | 0.000  | remote         | 0.000  |
+| keyboard      | 0.000  | cell phone   | 0.000  | microwave      | 0.000  |
+| oven          | 0.000  | toaster      | 0.000  | sink           | 0.000  |
+| refrigerator  | 0.000  | book         | 0.000  | clock          | 0.000  |
+| vase          | 0.000  | scissors     | 0.000  | teddy bear     | 0.000  |
+| hair drier    | 0.000  | toothbrush   | 0.000  |                |        |
+[32m[08/08 18:10:48 d2.engine.defaults]: [0mEvaluation results for coco_2017_val in csv format:
+[32m[08/08 18:10:48 d2.evaluation.testing]: [0mcopypaste: Task: bbox
+[32m[08/08 18:10:48 d2.evaluation.testing]: [0mcopypaste: AP,AP50,AP75,APs,APm,APl
+[32m[08/08 18:10:48 d2.evaluation.testing]: [0mcopypaste: 2.9886,5.5922,2.9480,0.7236,3.0575,5.1649
