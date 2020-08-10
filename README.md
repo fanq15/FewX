@@ -75,8 +75,8 @@ If you use this toolbox in your research or wish to refer to the baseline result
     author={Fan, Qi and Zhuo, Wei and Tang, Chi-Keung and Tai, Yu-Wing},
     booktitle={CVPR},
     year={2020}
-    
   }
+  
   @inproceedings{fan2020cpmask,
     title={Commonality-Parsing Network across Shape and Appearance for Partially Supervised Instance Segmentation},
     author={Fan, Qi and Ke, Lei and Pei, Wenjie and Tang, Chi-Keung and Tai, Yu-Wing},
