@@ -13,6 +13,10 @@ To date, FewX implements the following algorithms:
 - **State-of-the-art performance.**  
   - FSOD is the best few-shot object detection model. 
   - CPMask is the best partially supervised/few-shot instance segmentation model.
+- **Easy to use.** You only need to run 3 code lines to conduct the entire experiment.
+  - Install Pre-Built Detectron2 in one code line.
+  - Prepare dataset in one code line. (You need to first download the dataset and change the **data path** in the script.)
+  - Training and evaluation in one code line.
 
 ## Updates
 - FewX has been released. (09/08/2020)
@@ -30,7 +34,6 @@ The results are reported on the COCO voc subset with **ResNet-50** backbone.
 
 You can reference the [original FSOD implementation](https://github.com/fanq15/FSOD-code) on the [Few-Shot-Object-Detection-Dataset](https://github.com/fanq15/Few-Shot-Object-Detection-Dataset).
 
-
 ## Installation
 You only need to install [detectron2](https://github.com/facebookresearch/detectron2/blob/master/INSTALL.md). We recommend the Pre-Built Detectron2 (Linux only) version with pytorch 1.5. I use the Pre-Built Detectron2 with CUDA10.1 and torch1.5 and you can run this code to install it.
 
@@ -44,11 +47,11 @@ python -m pip install detectron2 -f \
 
 - `cd datasets`, change the `DATA_ROOT` in the `generate_support_data.sh` to your data path.
 
-- `sh generate_support_data.sh`.
+- ``` sh generate_support_data.sh```.
 
 ## Training and Evaluation
 
-Just run `sh all.sh` in the root dir. (This script uses `4 GPUs`. You can change the GPU number.)
+Run `sh all.sh` in the root dir. (This script uses `4 GPUs`. You can change the GPU number.)
 
 
 ## TODO
