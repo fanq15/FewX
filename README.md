@@ -45,13 +45,21 @@ python -m pip install detectron2 -f \
 ## Prepare dataset
 - Prepare for coco dataset following [this instruction](https://github.com/facebookresearch/detectron2/tree/master/datasets).
 
-- `cd datasets`, change the `DATA_ROOT` in the `generate_support_data.sh` to your data path.
+- `cd datasets`, change the `DATA_ROOT` in the `generate_support_data.sh` to your data path and run `sh generate_support_data.sh`.
 
-- ``` sh generate_support_data.sh```.
+``` 
+cd FewX/datasets
+sh generate_support_data.sh
+```
 
 ## Training and Evaluation
 
 Run `sh all.sh` in the root dir. (This script uses `4 GPUs`. You can change the GPU number.)
+
+```
+cd FewX
+sh all.sh
+```
 
 
 ## TODO
