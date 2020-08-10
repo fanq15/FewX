@@ -35,7 +35,7 @@ The results are reported on the COCO voc subset with **ResNet-50** backbone.
 You can reference the [original FSOD implementation](https://github.com/fanq15/FSOD-code) on the [Few-Shot-Object-Detection-Dataset](https://github.com/fanq15/Few-Shot-Object-Detection-Dataset).
 
 ## Installation
-You only need to install [detectron2](https://github.com/facebookresearch/detectron2/blob/master/INSTALL.md). We recommend the Pre-Built Detectron2 (Linux only) version with pytorch 1.5. I use the Pre-Built Detectron2 with CUDA10.1 and torch1.5 and you can run this code to install it.
+You only need to install [detectron2](https://github.com/facebookresearch/detectron2/blob/master/INSTALL.md). We recommend the Pre-Built Detectron2 (Linux only) version with pytorch 1.5. I use the Pre-Built Detectron2 with CUDA 10.1 and pytorch 1.5 and you can run this code to install it.
 
 ```
 python -m pip install detectron2 -f \
