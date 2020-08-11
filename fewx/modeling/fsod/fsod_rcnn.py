@@ -298,7 +298,7 @@ class FsodRCNN(nn.Module):
                 del res5_feature
                 del res5_avg
 
-            with open('support_feature.pkl', 'wb') as f:
+            with open(support_file_name, 'wb') as f:
                pickle.dump(support_dict, f)
             assert False
 
