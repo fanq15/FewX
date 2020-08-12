@@ -28,6 +28,7 @@ import pandas as pd
 from detectron2.data.catalog import MetadataCatalog
 import detectron2.data.detection_utils as utils
 import pickle
+import sys
 
 __all__ = ["FsodRCNN"]
 
@@ -300,8 +301,10 @@ class FsodRCNN(nn.Module):
 
             with open(support_file_name, 'wb') as f:
                pickle.dump(support_dict, f)
-            assert False
-
+            print("=========== Offline support features are generated. ===========")
+            print("============ Few-shot object detetion will start. =============")
+            sys.exit(0)
+            
         else:
             with open(support_file_name, "rb") as hFile:
                 self.support_dict  = pickle.load(hFile, encoding="latin1")
