@@ -11,7 +11,7 @@ To date, FewX implements the following algorithms:
 
 ## Highlights
 - **State-of-the-art performance.**  
-  - FSOD is the best few-shot object detection model. 
+  - FSOD is the best few-shot object detection model. (This model can be directly applied to novel classes without finetuning. And finetuning can bring better performance.)
   - CPMask is the best partially supervised/few-shot instance segmentation model.
 - **Easy to use.** You only need to run 3 code lines to conduct the entire experiment.
   - Install Pre-Built Detectron2 in one code line.
