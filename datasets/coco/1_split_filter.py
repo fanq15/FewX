@@ -109,7 +109,7 @@ for dataType in ['instances_train2017.json']: #, 'split_voc_instances_train2017.
     
     coco = COCO(annFile)
 
-    # for non-voc, there is no voc images
+    # for non-voc, there can be non_voc images
     annotations_split2 = filter_coco(coco, cids_split2)
 
     # for voc, there can be non_voc images
