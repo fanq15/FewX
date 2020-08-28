@@ -39,22 +39,23 @@ def balance_coco(coco):
             
         for category_id, num in img_cls_dict.items():
             if category_id in all_cls_dict.keys():
-                all_cls_dict[category_id] += num
+                all_cls_dict[category_id] += 1 # count the image number containing the target category
             else:
-                all_cls_dict[category_id] = num
-    print(sorted(all_cls_dict.items(), key = lambda kv:(kv[1], kv[0])))  
+                all_cls_dict[category_id] = 1 
+    print('Image number of non-voc classes before class balancing: ', sorted(all_cls_dict.items(), key = lambda kv:(kv[1], kv[0])))  
     
     new_anns = []
-    save_flag = False
     for img_id, id in enumerate(coco.imgs):
+        save_flag = False
         anns = coco.loadAnns(coco.getAnnIds(imgIds=id, iscrowd=None))
         if len(anns) == 0:
             continue
+        # in this image, if there is at least one category with less than 2000 images, save this image.
+        # otherwise, remove this image.
         for ann in anns:
             category_id = ann['category_id']
-            id = ann['id']
             
-            if all_cls_dict[category_id] <= 80: #30:
+            if all_cls_dict[category_id] <= 2000:
                 save_flag = True
             
         if save_flag:
@@ -64,8 +65,8 @@ def balance_coco(coco):
             for ann in anns:
                 category_id = ann['category_id']
                 all_cls_dict[category_id] -= 1
-    print(len(new_anns))
-    print(sorted(all_cls_dict.items(), key = lambda kv:(kv[1], kv[0])))  
+    print('Instance number of non-voc classes after class balancing: ', len(new_anns))
+    print('Image number of non-voc classes after class balancing: ', sorted(all_cls_dict.items(), key = lambda kv:(kv[1], kv[0])))  
     
     return new_anns
 
