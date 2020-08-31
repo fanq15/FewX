@@ -59,6 +59,7 @@ class FsodRCNN(nn.Module):
 
         self.support_way = cfg.INPUT.FS.SUPPORT_WAY
         self.support_shot = cfg.INPUT.FS.SUPPORT_SHOT
+        self.logger = logging.getLogger(__name__)
 
     @property
     def device(self):
@@ -252,6 +253,8 @@ class FsodRCNN(nn.Module):
         self.support_on = True #False
 
         support_dir = './support_dir'
+        if not os.path.exists(support_dir):
+            os.makedirs(support_dir)
 
         support_file_name = os.path.join(support_dir, 'support_feature.pkl')
         if not os.path.exists(support_file_name):
@@ -301,8 +304,8 @@ class FsodRCNN(nn.Module):
 
             with open(support_file_name, 'wb') as f:
                pickle.dump(support_dict, f)
-            print("=========== Offline support features are generated. ===========")
-            print("============ Few-shot object detetion will start. =============")
+            self.logger.info("=========== Offline support features are generated. ===========")
+            self.logger.info("============ Few-shot object detetion will start. =============")
             sys.exit(0)
             
         else:
