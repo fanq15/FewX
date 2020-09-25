@@ -32,6 +32,8 @@ To date, FewX implements the following algorithms:
 
 The results are reported on the COCO voc subset with **ResNet-50** backbone.
 
+The model only trained on base classes is <a href="https://drive.google.com/file/d/1VdGVmcufa2JBmZUfwAcDj1OL5tKTFhQ1/view?usp=sharing"> base model</a>&nbsp;\.
+
 You can reference the [original FSOD implementation](https://github.com/fanq15/FSOD-code) on the [Few-Shot-Object-Detection-Dataset](https://github.com/fanq15/Few-Shot-Object-Detection-Dataset).
 
 ## Step 1: Installation
