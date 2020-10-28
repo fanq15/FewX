@@ -2,7 +2,7 @@
 
 **FewX** is an open source toolbox on top of Detectron2 for data-limited instance-level recognition tasks, e.g., few-shot object detection, few-shot instance segmentation, partially supervised instance segmentation and so on. 
 
-All data-limited instance-level recognition works from **Qi Fan**  (HKUST, fanqithu@gmail.com) are open-sourced here.
+All data-limited instance-level recognition works from **Qi Fan**  (HKUST, qfanaa@connect.ust.hk) are open-sourced here.
 
 To date, FewX implements the following algorithms:
 
