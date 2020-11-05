@@ -7,11 +7,26 @@ from detectron2.layers import Conv2d
 class _NewEmptyTensorOp(torch.autograd.Function):
     @staticmethod
     def forward(ctx, x, new_shape):
+        """
+        Returns a new_shape.
+
+        Args:
+            ctx: (todo): write your description
+            x: (todo): write your description
+            new_shape: (int): write your description
+        """
         ctx.shape = x.shape
         return x.new_empty(new_shape)
 
     @staticmethod
     def backward(ctx, grad):
+        """
+        Compute a tensor for a tensor.
+
+        Args:
+            ctx: (todo): write your description
+            grad: (array): write your description
+        """
         shape = ctx.shape
         return _NewEmptyTensorOp.apply(grad, shape), None
 
@@ -39,6 +54,22 @@ class DFConv2d(nn.Module):
             bias=False,
             padding=None
     ):
+        """
+        Initialize channel.
+
+        Args:
+            self: (todo): write your description
+            in_channels: (int): write your description
+            out_channels: (int): write your description
+            with_modulated_dcn: (todo): write your description
+            kernel_size: (int): write your description
+            stride: (int): write your description
+            groups: (list): write your description
+            dilation: (todo): write your description
+            deformable_groups: (todo): write your description
+            bias: (float): write your description
+            padding: (str): write your description
+        """
         super(DFConv2d, self).__init__()
         if isinstance(kernel_size, (list, tuple)):
             assert isinstance(stride, (list, tuple))
@@ -93,6 +124,14 @@ class DFConv2d(nn.Module):
         self.offset_split = offset_base_channels * deformable_groups * 2
 
     def forward(self, x, return_offset=False):
+        """
+        Forward computation.
+
+        Args:
+            self: (todo): write your description
+            x: (todo): write your description
+            return_offset: (bool): write your description
+        """
         if x.numel() > 0:
             if not self.with_modulated_dcn:
                 offset_mask = self.offset(x)

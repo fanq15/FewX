@@ -33,6 +33,16 @@ class NaiveGroupNorm(Module):
                      'bias']
 
     def __init__(self, num_groups, num_channels, eps=1e-5, affine=True):
+        """
+        Initialize the gradients.
+
+        Args:
+            self: (todo): write your description
+            num_groups: (int): write your description
+            num_channels: (int): write your description
+            eps: (float): write your description
+            affine: (array): write your description
+        """
         super(NaiveGroupNorm, self).__init__()
         self.num_groups = num_groups
         self.num_channels = num_channels
@@ -47,11 +57,24 @@ class NaiveGroupNorm(Module):
         self.reset_parameters()
 
     def reset_parameters(self):
+        """
+        Reset hyperparameters.
+
+        Args:
+            self: (todo): write your description
+        """
         if self.affine:
             init.ones_(self.weight)
             init.zeros_(self.bias)
 
     def forward(self, input):
+        """
+        Forward computation.
+
+        Args:
+            self: (todo): write your description
+            input: (array): write your description
+        """
         N, C, H, W = input.size()
         assert C % self.num_groups == 0
         input = input.reshape(N, self.num_groups, -1)
@@ -66,5 +89,11 @@ class NaiveGroupNorm(Module):
         return input
 
     def extra_repr(self):
+        """
+        Return a string representation of - serialization.
+
+        Args:
+            self: (todo): write your description
+        """
         return '{num_groups}, {num_channels}, eps={eps}, ' \
             'affine={affine}'.format(**self.__dict__)

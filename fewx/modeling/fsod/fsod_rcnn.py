@@ -43,6 +43,13 @@ class FsodRCNN(nn.Module):
     """
 
     def __init__(self, cfg):
+        """
+        Initialize the device.
+
+        Args:
+            self: (todo): write your description
+            cfg: (todo): write your description
+        """
         super().__init__()
 
         self.backbone = build_backbone(cfg)
@@ -63,6 +70,12 @@ class FsodRCNN(nn.Module):
 
     @property
     def device(self):
+        """
+        The device device.
+
+        Args:
+            self: (todo): write your description
+        """
         return self.pixel_mean.device
 
     def visualize_training(self, batched_inputs, proposals):
@@ -250,6 +263,12 @@ class FsodRCNN(nn.Module):
         return losses
 
     def init_model(self):
+        """
+        Initialize the model.
+
+        Args:
+            self: (todo): write your description
+        """
         self.support_on = True #False
 
         support_dir = './support_dir'

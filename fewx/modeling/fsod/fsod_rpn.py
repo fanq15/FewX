@@ -102,6 +102,14 @@ class StandardRPNHead(nn.Module):
 
     @classmethod
     def from_config(cls, cfg, input_shape):
+        """
+        Initialize a set of inputs from a set of inputs.
+
+        Args:
+            cls: (todo): write your description
+            cfg: (str): write your description
+            input_shape: (list): write your description
+        """
         # Standard RPN is shared across levels:
         in_channels = [s.channels for s in input_shape]
         assert len(set(in_channels)) == 1, "Each level must have the same channel!"
@@ -211,6 +219,14 @@ class FsodRPN(nn.Module):
 
     @classmethod
     def from_config(cls, cfg, input_shape: Dict[str, ShapeSpec]):
+        """
+        Initialize a new rPN from a given config dictionary
+
+        Args:
+            cls: (todo): write your description
+            cfg: (str): write your description
+            input_shape: (list): write your description
+        """
         in_features = cfg.MODEL.RPN.IN_FEATURES
         ret = {
             "in_features": in_features,

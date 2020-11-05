@@ -465,6 +465,14 @@ class FsodFastRCNNOutputLayers(nn.Module):
 
     @classmethod
     def from_config(cls, cfg, input_shape):
+        """
+        Initialize an instance of the input_shape.
+
+        Args:
+            cls: (todo): write your description
+            cfg: (str): write your description
+            input_shape: (list): write your description
+        """
         return {
             "input_shape": input_shape,
             "box2box_transform": Box2BoxTransform(weights=cfg.MODEL.ROI_BOX_HEAD.BBOX_REG_WEIGHTS),
@@ -479,6 +487,14 @@ class FsodFastRCNNOutputLayers(nn.Module):
         }
 
     def forward(self, x_query, x_support):
+        """
+        Forward computation.
+
+        Args:
+            self: (todo): write your description
+            x_query: (todo): write your description
+            x_support: (int): write your description
+        """
         support = x_support #.mean(0, True) # avg pool on res4 or avg pool here?
         # fc
         if self.global_relation:

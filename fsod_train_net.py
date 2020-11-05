@@ -69,6 +69,15 @@ class Trainer(DefaultTrainer):
 
     @classmethod
     def build_evaluator(cls, cfg, dataset_name, output_folder=None):
+        """
+        Builds a dataset from a dataset.
+
+        Args:
+            cls: (todo): write your description
+            cfg: (todo): write your description
+            dataset_name: (str): write your description
+            output_folder: (str): write your description
+        """
         if output_folder is None:
             output_folder = os.path.join(cfg.OUTPUT_DIR, "inference")
         return COCOEvaluator(dataset_name, cfg, True, output_folder)
@@ -91,6 +100,11 @@ def setup(args):
 
 
 def main(args):
+    """
+    Main function.
+
+    Args:
+    """
     cfg = setup(args)
 
     if args.eval_only:

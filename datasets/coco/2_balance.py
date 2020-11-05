@@ -22,6 +22,12 @@ import json
 import sys
 
 def balance_coco(coco):
+    """
+    Loads all the coco for all images.
+
+    Args:
+        coco: (todo): write your description
+    """
     all_cls_dict = {}
     for img_id, id in enumerate(coco.imgs):
         anns = coco.loadAnns(coco.getAnnIds(imgIds=id, iscrowd=None))

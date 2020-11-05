@@ -52,6 +52,14 @@ class FsodRes5ROIHeads(ROIHeads):
     """
 
     def __init__(self, cfg, input_shape):
+        """
+        Initialize the graph.
+
+        Args:
+            self: (todo): write your description
+            cfg: (todo): write your description
+            input_shape: (dict): write your description
+        """
         super().__init__(cfg)
 
         # fmt: off
@@ -78,6 +86,13 @@ class FsodRes5ROIHeads(ROIHeads):
         )
 
     def _build_res5_block(self, cfg):
+        """
+        Build channel channel.
+
+        Args:
+            self: (todo): write your description
+            cfg: (todo): write your description
+        """
         # fmt: off
         stage_channel_factor = 2 ** 3  # res5 is 8x res2
         num_groups           = cfg.MODEL.RESNETS.NUM_GROUPS
@@ -104,10 +119,26 @@ class FsodRes5ROIHeads(ROIHeads):
         return nn.Sequential(*blocks), out_channels
 
     def _shared_roi_transform(self, features, boxes):
+        """
+        Return a copy of features.
+
+        Args:
+            self: (todo): write your description
+            features: (todo): write your description
+            boxes: (list): write your description
+        """
         x = self.pooler(features, boxes)
         return self.res5(x)
 
     def roi_pooling(self, features, boxes):
+        """
+        Returns a list of feature boxes.
+
+        Args:
+            self: (todo): write your description
+            features: (todo): write your description
+            boxes: (todo): write your description
+        """
         box_features = self.pooler(
             [features[f] for f in self.in_features], boxes
         )

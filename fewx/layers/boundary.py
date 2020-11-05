@@ -15,6 +15,13 @@ from scipy.ndimage.filters import gaussian_filter
 from scipy.ndimage.measurements import center_of_mass
 
 def get_contour_interior(mask, bold=False):
+    """
+    Get the contour of a contour
+
+    Args:
+        mask: (todo): write your description
+        bold: (str): write your description
+    """
     if True: #'camunet' == config['param']['model']:
         # 2-pixel contour (1out+1in), 2-pixel shrinked interior
         outer = binary_dilation(mask) #, square(9))
@@ -31,6 +38,12 @@ def get_contour_interior(mask, bold=False):
     return contour, interior
 
 def get_center(mask):
+    """
+    Draw a center of image
+
+    Args:
+        mask: (todo): write your description
+    """
     r = 2
     y, x = center_of_mass(mask)
     center_img = Image.fromarray(np.zeros_like(mask).astype(np.uint8))
@@ -41,6 +54,12 @@ def get_center(mask):
     return center
 
 def get_instances_contour_interior(instances_mask):
+    """
+    Get the contour contour.
+
+    Args:
+        instances_mask: (str): write your description
+    """
     adjacent_boundary_only = False #False #config['contour'].getboolean('adjacent_boundary_only')
     instances_mask = instances_mask.data
     result_c = np.zeros_like(instances_mask, dtype=np.uint8)

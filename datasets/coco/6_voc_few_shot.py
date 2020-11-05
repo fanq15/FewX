@@ -22,6 +22,13 @@ import json
 import sys
 
 def few_shot(coco, shot_num):
+    """
+    Finds all images in - memory images
+
+    Args:
+        coco: (todo): write your description
+        shot_num: (int): write your description
+    """
     new_anns = []
     all_cls_dict = {}
     for img_id, id in enumerate(coco.imgs):

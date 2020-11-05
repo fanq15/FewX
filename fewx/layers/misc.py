@@ -15,11 +15,26 @@ from torch import nn
 class _NewEmptyTensorOp(torch.autograd.Function):
     @staticmethod
     def forward(ctx, x, new_shape):
+        """
+        Returns a new_shape.
+
+        Args:
+            ctx: (todo): write your description
+            x: (todo): write your description
+            new_shape: (int): write your description
+        """
         ctx.shape = x.shape
         return x.new_empty(new_shape)
 
     @staticmethod
     def backward(ctx, grad):
+        """
+        Compute a tensor for a tensor.
+
+        Args:
+            ctx: (todo): write your description
+            grad: (array): write your description
+        """
         shape = ctx.shape
         return _NewEmptyTensorOp.apply(grad, shape), None
 
@@ -27,12 +42,28 @@ class _NewEmptyTensorOp(torch.autograd.Function):
 def interpolate(
     input, size=None, scale_factor=None, mode="nearest", align_corners=None
 ):
+    """
+    Interpolate a tensor.
+
+    Args:
+        input: (array): write your description
+        size: (int): write your description
+        scale_factor: (float): write your description
+        mode: (str): write your description
+        align_corners: (array): write your description
+    """
     if input.numel() > 0:
         return torch.nn.functional.interpolate(
             input, size, scale_factor, mode, align_corners
         )
 
     def _check_size_scale_factor(dim):
+        """
+        Check that the scale scale factor is scale.
+
+        Args:
+            dim: (int): write your description
+        """
         if size is None and scale_factor is None:
             raise ValueError("either size or scale_factor should be defined")
         if size is not None and scale_factor is not None:
@@ -48,6 +79,12 @@ def interpolate(
             )
 
     def _output_size(dim):
+        """
+        Returns the size of a dimension.
+
+        Args:
+            dim: (int): write your description
+        """
         _check_size_scale_factor(dim)
         if size is not None:
             return size

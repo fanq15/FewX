@@ -37,6 +37,14 @@ class DatasetMapperWithSupport:
     """
 
     def __init__(self, cfg, is_train=True):
+        """
+        Initialize the module.
+
+        Args:
+            self: (todo): write your description
+            cfg: (todo): write your description
+            is_train: (bool): write your description
+        """
         if cfg.INPUT.CROP.ENABLED and is_train:
             self.crop_gen = T.RandomCrop(cfg.INPUT.CROP.TYPE, cfg.INPUT.CROP.SIZE)
             logging.getLogger(__name__).info("CropGen used in training: " + str(self.crop_gen))
@@ -189,6 +197,13 @@ class DatasetMapperWithSupport:
         return dataset_dict
 
     def generate_support(self, dataset_dict):
+        """
+        Generate support for support.
+
+        Args:
+            self: (todo): write your description
+            dataset_dict: (dict): write your description
+        """
         support_way = self.support_way #2
         support_shot = self.support_shot #5
         

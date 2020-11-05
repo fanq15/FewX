@@ -12,6 +12,12 @@ _PREDEFINED_SPLITS_COCO["coco"] = {
 }
 
 def register_all_coco(root):
+    """
+    Register all coco images.
+
+    Args:
+        root: (todo): write your description
+    """
     for dataset_name, splits_per_dataset in _PREDEFINED_SPLITS_COCO.items():
         for key, (image_root, json_file) in splits_per_dataset.items():
             # Assume pre-defined datasets live in `./datasets`.

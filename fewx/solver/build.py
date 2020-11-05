@@ -24,9 +24,21 @@ def _create_gradient_clipper(cfg: CfgNode) -> _GradientClipper:
     cfg = cfg.clone()
 
     def clip_grad_norm(p: _GradientClipperInput):
+        """
+        Clips the gradient.
+
+        Args:
+            p: (todo): write your description
+        """
         torch.nn.utils.clip_grad_norm_(p, cfg.CLIP_VALUE, cfg.NORM_TYPE)
 
     def clip_grad_value(p: _GradientClipperInput):
+        """
+        Clip gradient value to the given value.
+
+        Args:
+            p: (todo): write your description
+        """
         torch.nn.utils.clip_grad_value_(p, cfg.CLIP_VALUE)
 
     _GRADIENT_CLIP_TYPE_TO_CLIPPER = {
@@ -45,6 +57,13 @@ def _generate_optimizer_class_with_gradient_clipping(
     """
 
     def optimizer_wgc_step(self, closure=None):
+        """
+        Update the optimization optimization step.
+
+        Args:
+            self: (todo): write your description
+            closure: (callable): write your description
+        """
         for group in self.param_groups:
             for p in group["params"]:
                 gradient_clipper(p)

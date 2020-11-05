@@ -6,6 +6,12 @@ from detectron2.utils.comm import get_world_size
 
 
 def reduce_sum(tensor):
+    """
+    Reduce the sum of all tensor.
+
+    Args:
+        tensor: (todo): write your description
+    """
     world_size = get_world_size()
     if world_size < 2:
         return tensor
@@ -15,6 +21,13 @@ def reduce_sum(tensor):
 
 
 def aligned_bilinear(tensor, factor):
+    """
+    Alignedinear interpolation.
+
+    Args:
+        tensor: (todo): write your description
+        factor: (float): write your description
+    """
     assert tensor.dim() == 4
     assert factor >= 1
     assert int(factor) == factor
@@ -40,6 +53,15 @@ def aligned_bilinear(tensor, factor):
 
 
 def compute_locations(h, w, stride, device):
+    """
+    Compute locations of locations.
+
+    Args:
+        h: (todo): write your description
+        w: (todo): write your description
+        stride: (int): write your description
+        device: (todo): write your description
+    """
     shifts_x = torch.arange(
         0, w * stride, step=stride,
         dtype=torch.float32, device=device

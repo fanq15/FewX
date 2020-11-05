@@ -11,6 +11,13 @@ class IOULoss(nn.Module):
     * gIoU
     """
     def __init__(self, loc_loss_type='iou'):
+        """
+        Initialize loss loss.
+
+        Args:
+            self: (todo): write your description
+            loc_loss_type: (todo): write your description
+        """
         super(IOULoss, self).__init__()
         self.loc_loss_type = loc_loss_type
 

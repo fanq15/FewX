@@ -23,6 +23,14 @@ import shutil
 import sys
 
 def vis_image(im, bboxs, im_name):
+    """
+    Draw a matplot
+
+    Args:
+        im: (int): write your description
+        bboxs: (todo): write your description
+        im_name: (str): write your description
+    """
     dpi = 300
     fig, ax = plt.subplots() 
     ax.imshow(im, aspect='equal') 
@@ -47,6 +55,13 @@ def vis_image(im, bboxs, im_name):
 
 
 def crop_support(img, bbox):
+    """
+    Crops an image to the specified size.
+
+    Args:
+        img: (array): write your description
+        bbox: (todo): write your description
+    """
     image_shape = img.shape[:2]  # h, w
     data_height, data_width = image_shape
     
@@ -184,6 +199,11 @@ def crop_support(img, bbox):
         
 
 def main():
+    """
+    Main function.
+
+    Args:
+    """
     dataDir = '.'
 
     #root_path = '/home/fanqi/data/COCO'

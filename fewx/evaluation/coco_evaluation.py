@@ -92,6 +92,12 @@ class COCOEvaluator(DatasetEvaluator):
         self._do_evaluation = "annotations" in self._coco_api.dataset
 
     def reset(self):
+        """
+        Reset the internal state.
+
+        Args:
+            self: (todo): write your description
+        """
         self._predictions = []
 
     def _tasks_from_config(self, cfg):
@@ -127,6 +133,12 @@ class COCOEvaluator(DatasetEvaluator):
             self._predictions.append(prediction)
 
     def evaluate(self):
+        """
+        Evaluate the model.
+
+        Args:
+            self: (todo): write your description
+        """
         if self._distributed:
             comm.synchronize()
             predictions = comm.gather(self._predictions, dst=0)
@@ -243,6 +255,16 @@ class COCOEvaluator(DatasetEvaluator):
         self._results["box_proposals"] = res
 
     def _calculate_ap(self, class_names, precisions, T=None, A=None):
+        """
+        Calculate the vocabulary.
+
+        Args:
+            self: (todo): write your description
+            class_names: (str): write your description
+            precisions: (int): write your description
+            T: (todo): write your description
+            A: (todo): write your description
+        """
         ################## ap #####################
         voc_ls = []
         non_voc_ls = []

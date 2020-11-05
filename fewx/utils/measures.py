@@ -11,10 +11,22 @@ from functools import reduce
 
 
 def get_num_gen(gen):
+    """
+    Return the number of num_gens.
+
+    Args:
+        gen: (str): write your description
+    """
     return sum(1 for x in gen)
 
 
 def is_pruned(layer):
+    """
+    Check if a layer is pruned.
+
+    Args:
+        layer: (todo): write your description
+    """
     try:
         layer.mask
         return True
@@ -23,21 +35,45 @@ def is_pruned(layer):
 
 
 def is_leaf(model):
+    """
+    Return the leaf of a leaf.
+
+    Args:
+        model: (todo): write your description
+    """
     return get_num_gen(model.children()) == 0
 
 
 def get_layer_info(layer):
+    """
+    Get layer information.
+
+    Args:
+        layer: (todo): write your description
+    """
     layer_str = str(layer)
     type_name = layer_str[:layer_str.find('(')].strip()
     return type_name
 
 
 def get_layer_param(model):
+    """
+    Get the sum of all the parameters.
+
+    Args:
+        model: (todo): write your description
+    """
     return sum([reduce(operator.mul, i.size(), 1) for i in model.parameters()])
 
 
 ### The input batch size should be 1 to call this function
 def measure_layer(layer, *args):
+    """
+    Mean layer.
+
+    Args:
+        layer: (todo): write your description
+    """
     global count_ops, count_params
 
     for x in args:
@@ -156,18 +192,48 @@ def measure_layer(layer, *args):
 
 
 def measure_model(model, x):
+    """
+    Mean of the model.
+
+    Args:
+        model: (todo): write your description
+        x: (todo): write your description
+    """
     global count_ops, count_params
     count_ops = 0
     count_params = 0
 
     def should_measure(x):
+        """
+        Determine if x is a number of x.
+
+        Args:
+            x: (todo): write your description
+        """
         return is_leaf(x) or is_pruned(x)
 
     def modify_forward(model):
+        """
+        Modify the forward forward model.
+
+        Args:
+            model: (todo): write your description
+        """
         for child in model.children():
             if should_measure(child):
                 def new_forward(m):
+                    """
+                    R forward forward forward.
+
+                    Args:
+                        m: (todo): write your description
+                    """
                     def lambda_forward(*args):
+                        """
+                        Parameters ---------- forward_layer :
+
+                        Args:
+                        """
                         measure_layer(m, *args)
                         return m.old_forward(*args)
                     return lambda_forward
@@ -177,6 +243,12 @@ def measure_model(model, x):
                 modify_forward(child)
 
     def restore_forward(model):
+        """
+        Restore all forward forward.
+
+        Args:
+            model: (todo): write your description
+        """
         for child in model.children():
             # leaf node
             if is_leaf(child) and hasattr(child, 'old_forward'):

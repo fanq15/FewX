@@ -23,6 +23,13 @@ import sys
 
 
 def filter_coco(coco, cls_split):
+    """
+    Filters and coco
+
+    Args:
+        coco: (todo): write your description
+        cls_split: (array): write your description
+    """
     new_anns = []
     all_cls_dict = {}
     for img_id, id in enumerate(coco.imgs):

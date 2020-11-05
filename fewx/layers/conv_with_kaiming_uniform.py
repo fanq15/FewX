@@ -8,9 +8,28 @@ from detectron2.layers.batch_norm import get_norm
 def conv_with_kaiming_uniform(
         norm=None, activation=None,
         use_deformable=False, use_sep=False):
+    """
+    Uniform convolution layer.
+
+    Args:
+        norm: (todo): write your description
+        activation: (todo): write your description
+        use_deformable: (bool): write your description
+        use_sep: (bool): write your description
+    """
     def make_conv(
         in_channels, out_channels, kernel_size, stride=1, dilation=1
     ):
+        """
+        Make convolution layer.
+
+        Args:
+            in_channels: (int): write your description
+            out_channels: (todo): write your description
+            kernel_size: (int): write your description
+            stride: (int): write your description
+            dilation: (todo): write your description
+        """
         if use_deformable:
             conv_func = DFConv2d
         else:
