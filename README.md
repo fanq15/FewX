@@ -37,11 +37,11 @@ The model only trained on base classes is <a href="https://drive.google.com/file
 You can reference the [original FSOD implementation](https://github.com/fanq15/FSOD-code) on the [Few-Shot-Object-Detection-Dataset](https://github.com/fanq15/Few-Shot-Object-Detection-Dataset).
 
 ## Step 1: Installation
-You only need to install [detectron2](https://github.com/facebookresearch/detectron2/blob/master/INSTALL.md). We recommend the Pre-Built Detectron2 (Linux only) version with pytorch 1.5. I use the Pre-Built Detectron2 with CUDA 10.1 and pytorch 1.5 and you can run this code to install it.
+You only need to install [detectron2](https://github.com/facebookresearch/detectron2/blob/master/INSTALL.md). We recommend the Pre-Built Detectron2 (Linux only) version with pytorch 1.7. I use the Pre-Built Detectron2 with CUDA 10.1 and pytorch 1.7 and you can run this code to install it.
 
 ```
 python -m pip install detectron2 -f \
-  https://dl.fbaipublicfiles.com/detectron2/wheels/cu101/torch1.5/index.html
+  https://dl.fbaipublicfiles.com/detectron2/wheels/cu101/torch1.7/index.html
 ```
 
 ## Step 2: Prepare dataset
