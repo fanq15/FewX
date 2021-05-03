@@ -8,6 +8,8 @@ To date, FewX implements the following algorithms:
 
 - [FSOD](https://arxiv.org/abs/1908.01998): few-shot object detection.
 - [CPMask](https://arxiv.org/abs/2007.12387): partially supervised/fully supervised/few-shot instance segmentation (to be released).
+- [FSVOD](https://arxiv.org/abs/2104.14805): few-shot video object detection.
+
 
 ## Highlights
 - **State-of-the-art performance.**  
