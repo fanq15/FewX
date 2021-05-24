@@ -6,9 +6,9 @@ All data-limited instance-level recognition works from **Qi Fan**  (HKUST, qfana
 
 To date, FewX implements the following algorithms:
 
-- [FSOD](https://arxiv.org/abs/1908.01998): few-shot object detection.
+- [FSOD](https://arxiv.org/abs/1908.01998): few-shot object detection with [FSOD dataset](https://github.com/fanq15/Few-Shot-Object-Detection-Dataset).
 - [CPMask](https://arxiv.org/abs/2007.12387): partially supervised/fully supervised/few-shot instance segmentation (to be released).
-- [FSVOD](https://arxiv.org/abs/2104.14805): few-shot video object detection.
+- [FSVOD](https://arxiv.org/abs/2104.14805): few-shot video object detection with [FSVOD-500 dataset](https://drive.google.com/drive/folders/1DDQ81A8yVj7D8vLUS01657ATr2sK1zgC?usp=sharing) and [FSYTV-40 datasets]().
 
 ## Highlights
 - **State-of-the-art performance.**  
