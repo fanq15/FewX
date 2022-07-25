@@ -2,13 +2,13 @@
 
 **FewX** is an open source toolbox on top of Detectron2 for data-limited instance-level recognition tasks, e.g., few-shot object detection, few-shot instance segmentation, partially supervised instance segmentation and so on. 
 
-All data-limited instance-level recognition works from **Qi Fan**  (HKUST, qfanaa@connect.ust.hk) are open-sourced here.
+All data-limited instance-level recognition works from **Qi Fan**  (HKUST, fanqics@gmail.com) are open-sourced here.
 
 To date, FewX implements the following algorithms:
 
 - [FSOD](https://arxiv.org/abs/1908.01998): few-shot object detection with [FSOD dataset](https://github.com/fanq15/Few-Shot-Object-Detection-Dataset).
-- [CPMask](https://arxiv.org/abs/2007.12387): partially supervised/fully supervised/few-shot instance segmentation (to be released).
-- [FSVOD](https://arxiv.org/abs/2104.14805): few-shot video object detection with [FSVOD-500 dataset](https://drive.google.com/drive/folders/1DDQ81A8yVj7D8vLUS01657ATr2sK1zgC?usp=sharing) and [FSYTV-40 dataset](https://drive.google.com/drive/folders/1a1PpfAxeYL7AbxYViDDnx7ACFtRohVL5?usp=sharing).
+- [CPMask](https://arxiv.org/abs/2007.12387): partially supervised/fully supervised/few-shot instance segmentation. (**20220725 working on it**)
+- [FSVOD](https://arxiv.org/abs/2104.14805): few-shot video object detection with [FSVOD-500 dataset](https://drive.google.com/drive/folders/1DDQ81A8yVj7D8vLUS01657ATr2sK1zgC?usp=sharing) and [FSYTV-40 dataset](https://drive.google.com/drive/folders/1a1PpfAxeYL7AbxYViDDnx7ACFtRohVL5?usp=sharing). (**20220725 working on it**)
 
 ## Highlights
 - **State-of-the-art performance.**  
@@ -66,6 +66,7 @@ sh all.sh
 
 
 ## TODO
+ - [ ] Add FSVOD and CPMask codes to this repo.
  - [ ] Add other dataset results to FSOD.
  - [ ] Add [CPMask](https://arxiv.org/abs/2007.12387) code with partially supervised instance segmentation, fully supervised instance segmentation and few-shot instance segmentation.
 
@@ -76,8 +77,8 @@ If you use this toolbox in your research or wish to refer to the baseline result
   @inproceedings{fan2021fsvod,
     title={Few-Shot Video Object Detection},
     author={Fan, Qi and Tang, Chi-Keung and Tai, Yu-Wing},
-    booktitle={arxiv},
-    year={2021}
+    booktitle={ECCV},
+    year={2022}
   }
   @inproceedings{fan2020cpmask,
     title={Commonality-Parsing Network across Shape and Appearance for Partially Supervised Instance Segmentation},
